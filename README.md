@@ -52,6 +52,204 @@ This repository reflects my journey in learning and applying **Machine Learning 
 
 ---
 
+## 🛠 Repository-wide Instructions (From My Perspective)
+
+### 1) 🔐 Secrets & `.env` Handling  
+Throughout all my projects in this repository, I use the pattern:
+
+```
+token = "***"
+```
+
+This is a **placeholder only**.  
+You must **replace `***` with your actual API key** before running any project.
+
+#### Supported keys include:
+- **OPENAI_API_KEY**
+- **HUGGINGFACE_API_KEY**
+- **COHERE_API_KEY** (if used)
+- **GROQ_API_KEY** (optional)
+- **PINECONE_API_KEY** (for vector DB projects)
+- **LANGCHAIN_API_KEY** (if applicable)
+
+#### Important:
+- I **never commit real keys** to GitHub.  
+- All real API keys should be placed in your local `.env` file such as:
+
+```
+OPENAI_API_KEY=your_openai_key
+HUGGINGFACE_API_KEY=your_hf_key
+PINECONE_API_KEY=your_pinecone_key
+```
+
+- Use `.env.example` as the correct reference format.
+
+---
+
+### 2) 📦 Git LFS for Large Files  
+Some projects contain PDFs, MP3s, or model files.  
+If you want to modify or add more large files, use **Git LFS**:
+
+```bash
+git lfs install
+git lfs track "*.mp3"
+git lfs track "*.pdf"
+git add .gitattributes
+```
+
+This keeps the repo fast and clean.
+
+---
+
+### 3) 🧹 Recommended `.gitignore`
+
+```
+# Environment files
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Data
+*.db
+*.sqlite3
+
+# Virtual environments
+venv/
+.env/
+```
+
+If you add new large model files, also ignore them or use Git LFS.
+
+---
+
+### 4) ▶️ How to Run Any Project Locally  
+
+Each project in this repo is **self-contained**, so follow these steps:
+
+#### **Clone the repo**
+```bash
+git clone https://github.com/Laabh-Gupta/llm-genai-practice-projects.git
+cd llm-genai-practice-projects
+```
+
+#### **Install project-specific dependencies**
+Every folder has its own `requirements.txt`.  
+Example:
+
+```bash
+pip install -r "ChatGPT Clone/requirements.txt"
+```
+
+#### **Set up `.env` file**
+Create a `.env`:
+
+```
+OPENAI_API_KEY=your_key_here
+HUGGINGFACE_API_KEY=your_key_here
+PINECONE_API_KEY=your_key_here
+token="your_key_here"   # if the script expects token = "***"
+```
+
+> ⚠️ **Note:** Many of my demo apps originally used  
+> `token = "***"` inside the code. Replace it locally with your actual key.
+
+---
+
+### 5) 🚀 Running Specific Frameworks
+
+#### 🟦 **Running Streamlit Apps**
+Some projects (e.g., “MCQ Creator App”, “Resume Screening Tool”, etc.) use Streamlit:
+
+```bash
+streamlit run app.py
+```
+
+#### 🟨 **Running Python Scripts**
+Many folders contain a simple `app.py`:
+
+```bash
+python app.py
+```
+
+#### 🟧 **Running Notebooks**
+Open notebooks via:
+
+```bash
+jupyter notebook
+```
+or  
+```
+jupyter lab
+```
+
+#### 🟪 **Using Hugging Face**
+If the project loads HF models:
+
+```python
+from transformers import AutoModel, AutoTokenizer
+token = "***"  # replace with your HF key
+```
+
+Or set globally:
+
+```
+HUGGINGFACE_API_KEY=your_key_here
+```
+
+#### 🟩 **Using Pinecone (Vector DB)**
+If the project uses Pinecone for embeddings:
+
+```python
+from pinecone import Pinecone
+pc = Pinecone(api_key="your_key_here")
+```
+
+---
+
+### 6) 📄 Input / Output Formats (General)
+
+Most projects follow these formats:
+
+#### **Input**
+- text (prompt, question, resume, document)
+- PDFs (invoice, resume)
+- CSV (ticket classification, employee data)
+- Audio (`.mp3`) for summarization projects
+
+#### **Output**
+- generated text  
+- structured JSON  
+- CSV with extracted information  
+- chat-style responses  
+- MCQs or summaries
+
+---
+
+### 7) 🧪 Notes About This Repo
+
+- This is **not** a production repository.  
+- It is my **learning lab** containing:
+  - LLM experiments  
+  - mini-projects  
+  - notebooks  
+  - demos  
+  - practice code  
+
+- Good for interview explanations:  
+  - prompt engineering  
+  - embeddings  
+  - vector DBs  
+  - conversational agents  
+  - document parsing  
+  - generation tasks  
+
+
+---
+
 ### Automatic Ticket Classification Tool
 **About:** Small demo that classifies support tickets (e.g., HR, IT, Transport) into categories and can create a simple ML model for routing tickets.  
 **Resources used:** `scikit-learn` (likely), pandas, basic ML models (SVM/logistic regression). Replace with actual libs used in `/Automatic Ticket Classification Tool/requirements.txt`.  
@@ -209,50 +407,5 @@ python app.py
 ### LLM Intro.ipynb
 **About:** Educational notebook covering LLM basics (embeddings, transformers, attention). Open and read for theory & examples. citeturn1view0  
 **How to run:** Open in Jupyter; ensure that cells with API tokens are removed or converted to use environment variables.
-
----
-
-## Repository-wide instructions
-
-### 1) Secrets & `.env`
-- **Never commit** `.env` files with real API keys. Keep `*.env` in `.gitignore`. Use `.env.example` with placeholders instead.  
-- Regenerate any keys that were previously committed to this repo (you may have already done this).
-
-### 2) Git LFS / Large files
-- If you have large model files, Jupyter checkpoints, or audio files, use **Git LFS** or remove them from git and use release assets or external storage.  
-  Example: `git lfs install` and `git lfs track "*.mp3"`
-
-### 3) `.gitignore` template (recommended)
-```
-# env
-.env
-*.env
-
-# Python
-__pycache__/
-*.pyc
-.ipynb_checkpoints/
-
-# Data
-*.csv
-*.db
-*.sqlite3
-
-# Virtual envs
-venv/
-.env/
-```
-
-### 4) How to run locally (example)
-```bash
-# clone repo
-git clone https://github.com/Laabh-Gupta/llm-genai-practice-projects.git
-cd llm-genai-practice-projects
-
-# per-project: follow the project's README / requirements.txt
-pip install -r "ChatGPT Clone/requirements.txt"
-# then run the app or notebook
-python "ChatGPT Clone/app.py"
-```
 
 ---
