@@ -1,78 +1,54 @@
-# 📌 Overview #
+# 📌 Overview
 
-This repository is a consolidated collection of my LLM and Generative AI practice projects, experiments, and study notebooks.
+This repository is a consolidated collection of my LLM and Generative AI practice projects, experiments, and study notebooks.  
 It brings together all the small applications, demos, exploratory notebooks, and learning-based implementations I built while studying:
 
-- Large Language Models (LLMs)
+- **Large Language Models (LLMs)**
+- **Prompt Engineering**
+- **Embeddings & Vector Databases**
+- **Text Classification & Summarization**
+- **PDF/Document Parsing**
+- **Conversational AI**
+- **RAG (Retrieval-Augmented Generation) pipelines**
+- **NLP fundamentals**
 
-- Prompt Engineering
-
-Embeddings & Vector Databases
-
-Text Classification & Summarization
-
-PDF/Document Parsing
-
-Conversational AI
-
-RAG (Retrieval-Augmented Generation) pipelines
-
-NLP fundamentals
-
-The purpose of this repo is to maintain a single organized place for all GenAI mini-projects I completed during my learning phase.
-Each folder contains a self-contained project with its own scripts, sample inputs, and requirements.txt, ranging from simple chatbots to data extraction tools.
+The purpose of this repo is to maintain a single organized place for all GenAI mini-projects I completed during my learning phase.  
+Each folder contains a self-contained project with its own scripts, sample inputs, and `requirements.txt`, ranging from simple chatbots to data extraction tools.
 
 While these are not production-grade applications, they demonstrate:
 
-My understanding of LLM workflows
-
-Hands-on projects across multiple domains
-
-Usage of OpenAI, Hugging Face, and classical ML models
-
-Real-world document processing and automation tasks
-
-Experimentation with conversational AI and text generation
+- My understanding of LLM workflows  
+- Hands-on projects across multiple domains  
+- Usage of OpenAI, Hugging Face, and classical ML models  
+- Real-world document processing and automation tasks  
+- Experimentation with conversational AI and text generation  
 
 This repo acts as both:
 
-A knowledge base of everything I studied (ML, NLP, GenAI), and
-
-A personal practice lab where I experimented with multiple frameworks to strengthen my skills.
+- A knowledge base of everything I studied (ML, NLP, GenAI), and  
+- A personal practice lab where I experimented with multiple frameworks to strengthen my skills.
 
 It includes various LLM-powered tools such as:
 
-ChatGPT-like interfaces
-
-MCQ generators
-
-Resume screeners
-
-Email and marketing content generators
-
-PDF invoice extractors
-
-Customer-care call summarizers
-
-Support chatbots
-
-Code reviewers
-
-CSV/Document analysis apps
+- ChatGPT-like interfaces  
+- MCQ generators  
+- Resume screeners  
+- Email and marketing content generators  
+- PDF invoice extractors  
+- Customer-care call summarizers  
+- Support chatbots  
+- Code reviewers  
+- CSV/Document analysis apps  
 
 Each project section below explains:
 
-What the app does
+- What the app does  
+- Which libraries or APIs it uses (OpenAI, HF Transformers, etc.)  
+- Input and output formats  
+- How to run it  
+- Environment variables required  
 
-Which libraries or APIs it uses (OpenAI, HF Transformers, etc.)
-
-Input and output formats
-
-How to run it
-
-Environment variables required
-
-This repository reflects my journey in learning and applying Machine Learning → NLP → LLMs → GenAI applications through hands-on practice.
+This repository reflects my journey in learning and applying **Machine Learning → NLP → LLMs → GenAI** applications through hands-on practice.
 
 ---
 
