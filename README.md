@@ -84,7 +84,6 @@ PINECONE_API_KEY=your_pinecone_key
 
 - Use `.env.example` as the correct reference format.
 
----
 
 ### 2) 📦 Git LFS for Large Files  
 Some projects contain PDFs, MP3s, or model files.  
@@ -99,7 +98,6 @@ git add .gitattributes
 
 This keeps the repo fast and clean.
 
----
 
 ### 3) 🧹 Recommended `.gitignore`
 
@@ -124,7 +122,6 @@ venv/
 
 If you add new large model files, also ignore them or use Git LFS.
 
----
 
 ### 4) ▶️ How to Run Any Project Locally  
 
@@ -156,8 +153,6 @@ token="your_key_here"   # if the script expects token = "***"
 
 > ⚠️ **Note:** Many of my demo apps originally used  
 > `token = "***"` inside the code. Replace it locally with your actual key.
-
----
 
 ### 5) 🚀 Running Specific Frameworks
 
@@ -208,7 +203,6 @@ from pinecone import Pinecone
 pc = Pinecone(api_key="your_key_here")
 ```
 
----
 
 ### 6) 📄 Input / Output Formats (General)
 
@@ -227,7 +221,6 @@ Most projects follow these formats:
 - chat-style responses  
 - MCQs or summaries
 
----
 
 ### 7) 🧪 Notes About This Repo
 
@@ -247,6 +240,11 @@ Most projects follow these formats:
   - document parsing  
   - generation tasks  
 
+
+---
+
+### LLM Intro.ipynb
+**About:** Educational notebook covering LLM basics (embeddings, transformers, attention). Open and read for theory & examples. Covers basics of how to use API Tokens and how to run an LLM Model
 
 ---
 
@@ -404,8 +402,3 @@ python app.py
 
 ---
 
-### LLM Intro.ipynb
-**About:** Educational notebook covering LLM basics (embeddings, transformers, attention). Open and read for theory & examples. citeturn1view0  
-**How to run:** Open in Jupyter; ensure that cells with API tokens are removed or converted to use environment variables.
-
----
